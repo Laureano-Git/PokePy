@@ -9,8 +9,6 @@ from dotenv import load_dotenv #Importe de mi archivo my_secrets.py
 load_dotenv()
 # TOKEN del BOT -- Esto esta en .env
 TOKEN=os.getenv("DISCORD_TOKEN")
-# ID del server SK -- Esto esta en .env
-GUILD_ID=os.getenv("GUILD_ID")
 
 # Diccionario para comando $f
 family={"juli":"https://klipy.com/gifs/ruurd-juli","delfi":"https://klipy.com/gifs/freaky-dolphin",
@@ -21,9 +19,6 @@ family={"juli":"https://klipy.com/gifs/ruurd-juli","delfi":"https://klipy.com/gi
 "lulu":"https://klipy.com/gifs/lulu-team-fight-tactics","analia":"👄🍆",
 "malvi":"https://klipy.com/gifs/islas-malvinas-son-argentinas",
 "andre":"https://klipy.com/gifs/love-love-u-10", "barbi":"https://klipy.com/gifs/te-20"}
-
-# ID del server SK -- Esto esta en my_secrets
-#GUILD_ID = discord.Object(id=my_secrets.ID)
 
 # seleccionando varias lineas y apretanto CNTL+k+c las comentas todas en Visual Studio Code
 
@@ -216,8 +211,6 @@ async def bardini(interaction: discord.Interaction, arg:str):
 # -----EVENTOS-----
 @bot.event
 async def on_ready():
-    bot.tree.copy_global_to(guild=GUILD_ID) # Registra los comandos globales en el server de SK unicamente
-    await bot.tree.sync(guild=GUILD_ID)
     print(f"Hola soy {bot.user}")
     print("yt-dlp funciona")
 
